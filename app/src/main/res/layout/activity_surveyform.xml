@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".survey_data_form.Survey_form">
+<TextView
+    android:id="@+id/question"
+    android:layout_width="match_parent"
+    android:textFontWeight="23"
+    android:textSize="50dp"
+    android:layout_height="wrap_content"
+    android:textAlignment="center"
+    android:text="do you like this application"/>
+
+    <Button
+        android:id="@+id/like"
+        android:layout_below="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="LIKE"/>
+    <Button
+        android:id="@+id/dislike"
+        android:layout_below="@+id/like"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="DISLIKE"/>
+    <Button
+        android:id="@+id/neutral"
+        android:layout_below="@+id/dislike"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Neutral"/>
+
+
+</LinearLayout>
