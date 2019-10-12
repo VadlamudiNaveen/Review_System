@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".list_of_surveys.List_it"></activity>
-        <activity android:name=".Survey_activity" />
+        <activity android:name=".survey_main_activity.Survey_activity" />
         <activity android:name=".start_page.Start_screen" />
         <activity android:name=".survey_data_form.Survey_form" />
         <activity
@@ -22,16 +22,17 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".signup.SignupActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
-            android:name=".ResetPasswordActivity"
+            android:name=".login.ResetPasswordActivity"
             android:label="@string/title_activity_reset_password"
             android:theme="@style/AppTheme.NoActionBar" />
 

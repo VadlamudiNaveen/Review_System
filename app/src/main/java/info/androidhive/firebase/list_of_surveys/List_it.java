@@ -13,11 +13,11 @@ import android.view.ViewGroup;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import info.androidhive.firebase.R;
+import info.androidhive.firebase.item_click.ItemClickListener;
 
 
 public class List_it extends AppCompatActivity {
@@ -47,21 +47,18 @@ public class List_it extends AppCompatActivity {
         recyclerAdapter = new FirebaseRecyclerAdapter<Model, CategoryViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull CategoryViewHolder holder, int position, @NonNull Model model) {
-              holder.setDetails(getApplicationContext(),model.getTitle(),model.getImg());
-
+                holder.setDetails(getApplicationContext(), model.getTitle(), model.getImage());
             }
-
             @NonNull
             @Override
             public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
                 View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.model,viewGroup,false);
-                return new CategoryViewHolder(view);
+                return new CategoryViewHolder(getApplicationContext(),view);
             }
         };
         recyclerView.setAdapter(recyclerAdapter);
         recyclerAdapter.notifyDataSetChanged();
         recyclerAdapter.startListening();
     }
-
 }
 

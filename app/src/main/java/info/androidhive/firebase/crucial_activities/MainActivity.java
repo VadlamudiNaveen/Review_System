@@ -1,4 +1,4 @@
-package info.androidhive.firebase;
+package info.androidhive.firebase.crucial_activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import info.androidhive.firebase.R;
 import info.androidhive.firebase.login.LoginActivity;
 import info.androidhive.firebase.signup.SignupActivity;
 

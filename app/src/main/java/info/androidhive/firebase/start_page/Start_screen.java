@@ -8,10 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 import info.androidhive.firebase.R;
-import info.androidhive.firebase.Survey_activity;
+import info.androidhive.firebase.survey_main_activity.Survey_activity;
 
 public class Start_screen extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +19,10 @@ public class Start_screen extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startquiz();
+                startsurvey();
             }
 
-            private void startquiz() {
+            private void startsurvey() {
                 Intent intent=new Intent(Start_screen.this, Survey_activity.class);
                 startActivity(intent);
             }

@@ -16,9 +16,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import info.androidhive.firebase.MainActivity;
+import info.androidhive.firebase.crucial_activities.MainActivity;
 import info.androidhive.firebase.R;
-import info.androidhive.firebase.ResetPasswordActivity;
+import info.androidhive.firebase.login.ResetPasswordActivity;
 
 public class SignupActivity extends AppCompatActivity {
 

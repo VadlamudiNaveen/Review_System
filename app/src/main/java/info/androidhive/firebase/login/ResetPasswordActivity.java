@@ -1,4 +1,4 @@
-package info.androidhive.firebase;
+package info.androidhive.firebase.login;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+
+import info.androidhive.firebase.R;
 
 public class ResetPasswordActivity extends AppCompatActivity {
 
