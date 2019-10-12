@@ -1,4 +1,4 @@
-package info.androidhive.firebase.list_of_surveys;
+package info.androidhive.firebase.model_classes;
 
 public class Model {
     public String title,image;

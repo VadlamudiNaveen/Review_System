@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import info.androidhive.firebase.R;
-import info.androidhive.firebase.item_click.ItemClickListener;
+import info.androidhive.firebase.model_classes.Model;
 
 
 public class List_it extends AppCompatActivity {
@@ -25,6 +24,7 @@ public class List_it extends AppCompatActivity {
     FirebaseRecyclerAdapter<Model, CategoryViewHolder> recyclerAdapter;
     FirebaseDatabase fdb;
     DatabaseReference ref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,16 +39,16 @@ public class List_it extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-    FirebaseRecyclerOptions options =
-                new FirebaseRecyclerOptions.Builder<Model>()
+    FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Model>()
                         .setQuery(ref,Model.class)
                         .build();
+     recyclerAdapter = new FirebaseRecyclerAdapter<Model, CategoryViewHolder>(options) {
 
-        recyclerAdapter = new FirebaseRecyclerAdapter<Model, CategoryViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull CategoryViewHolder holder, int position, @NonNull Model model) {
                 holder.setDetails(getApplicationContext(), model.getTitle(), model.getImage());
             }
+
             @NonNull
             @Override
             public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -56,9 +56,11 @@ public class List_it extends AppCompatActivity {
                 return new CategoryViewHolder(getApplicationContext(),view);
             }
         };
+
         recyclerView.setAdapter(recyclerAdapter);
         recyclerAdapter.notifyDataSetChanged();
         recyclerAdapter.startListening();
     }
+
 }
 

@@ -18,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import info.androidhive.firebase.R;
+import info.androidhive.firebase.global.Global;
 import info.androidhive.firebase.list_of_surveys.List_it;
 import info.androidhive.firebase.signup.SignupActivity;
 
@@ -36,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         //once you have logged in it checks  and it will auto signup the activity
         if (auth.getCurrentUser() != null) {
-            //startActivity(new Intent(LoginActivity.this, Start_screen.class));
+           // startActivity(new Intent(LoginActivity.this, List_it.class));
             //finish();
         }
 
@@ -74,6 +75,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = inputEmail.getText().toString();
                 final String password = inputPassword.getText().toString();
+                final Global globalVariable = (Global) getApplicationContext();
+                globalVariable.setEmail(email);
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();

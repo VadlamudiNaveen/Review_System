@@ -1,4 +1,4 @@
-package info.androidhive.firebase.crucial_activities;
+package info.androidhive.firebase.Main_activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;

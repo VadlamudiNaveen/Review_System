@@ -15,10 +15,7 @@ import info.androidhive.firebase.start_page.Start_screen;
 public class CategoryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     public TextView title_t;
     public ImageView image_t;
-//   ItemClickListener itemClickListener;
     Context ct;
-    //View v;
-
     public CategoryViewHolder(Context ct,@NonNull View itemView) {
         super(itemView);
         this.ct=ct;
@@ -29,7 +26,7 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder implements View.
         title_t=itemView.findViewById(R.id.title);
         image_t=itemView.findViewById(R.id.image);
         title_t.setText(title);
-        System.out.println("  "+image);
+        //System.out.println("  "+image);
         Picasso.get().load(image).into(image_t);
     }
 
@@ -38,5 +35,4 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder implements View.
         Intent intent=new Intent(ct,Start_screen.class);
         ct.startActivity(intent);
     }
-
 }
