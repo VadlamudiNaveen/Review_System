@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import info.androidhive.firebase.Main_activity.MainActivity;
 import info.androidhive.firebase.R;
+import info.androidhive.firebase.login.LoginActivity;
 import info.androidhive.firebase.login.ResetPasswordActivity;
 
 public class SignupActivity extends AppCompatActivity {
@@ -93,7 +94,7 @@ public class SignupActivity extends AppCompatActivity {
                                     Toast.makeText(SignupActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(SignupActivity.this, MainActivity.class));
+                                    startActivity(new Intent(SignupActivity.this, LoginActivity.class));
                                     finish();
                                 }
                             }
